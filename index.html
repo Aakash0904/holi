@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    #game-container{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        margin: 5px;
+        overflow: hidden;
+    }
+    h1{
+        font-size: 40px;
+    }
+    p{
+        font-size: 24px;
+        padding: 5px;
+    }
+
+    span{
+        font-size: 28px;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    #target{
+        position: absolute;
+        left: 150px;
+        transition: top 0.5s, left 0.5s, right 0.5s, bottom 0.5s;
+    }
+    button{
+        color: white;
+        background-color: rgb(0, 89, 255);
+        border: none;
+        width: 90px;
+        border-radius: 10px;
+        font-size: 20px;
+        padding: 8px;
+    }
+  </style>
+  <body>
+    <div id="game-container">
+      <div class="box">
+        <h1>Happy Holi...</h1>
+        <p>Aaj meri taraf se sham 5 party h lekin aap log holi khel k thak gaye honge isliye kl sham 4:30 pm ka program rkha h mene. Please yes button pe click krke apna confirmation dijiye. Aur agar aap nhi aa rhe to aap mujhe party denge.... thank you</p>
+        <p>from <span>Verma Akash</span></p>
+        <button id="yes">Yes</button>
+        <button id="target">No</button>
+      </div>
+    </div>
+
+    <script>
+        const target = document.getElementById('target')
+    
+        function moveTarget() {
+            const maxWidth = 50;
+            const maxHeight = 50;
+    
+            const randomX = Math.floor(Math.random()* maxWidth);
+            const randomY = Math.floor(Math.random()* maxHeight);
+    
+            console.log("x", randomX)
+            console.log("y", randomY)
+            target.style.left = randomX + 'vw';
+            target.style.top = randomY + 'vh';
+    
+        }
+    
+        target.addEventListener('mouseenter', function(){
+            moveTarget()
+        })
+      </script>
+  </body>
+</html>
